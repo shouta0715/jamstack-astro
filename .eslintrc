@@ -4,6 +4,11 @@
     "es6": true
   },
   "root": true,
+  "settings": {
+    "import/resolver": {
+      "typescript": { "project": "./src" }
+    }
+  },
   "extends": [
     "eslint:recommended",
     "airbnb",
@@ -24,6 +29,9 @@
         "extraFileExtensions": [".astro"]
       },
       "rules": {
+        "arrow-body-style": ["error", "always"],
+        "import/prefer-default-export": "off",
+        "import/no-extraneous-dependencies": "off",
         "react/react-in-jsx-scope": "off",
         "react/no-unknown-property": "off",
         "no-console": "warn",
@@ -95,5 +103,79 @@
         ]
       }
     }
-  ]
+  ],
+  "rules": {
+    "import/prefer-default-export": "off",
+    "arrow-body-style": ["error", "always"],
+    "import/no-extraneous-dependencies": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/no-unknown-property": "off",
+    "no-console": "warn",
+    "react/jsx-sort-props": "error",
+    "lines-between-class-members": [
+      "error",
+      "always",
+      {
+        "exceptAfterSingleLine": true
+      }
+    ],
+    "no-void": [
+      "error",
+      {
+        "allowAsStatement": true
+      }
+    ],
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "return"
+      }
+    ],
+    "unused-imports/no-unused-imports": "error",
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "argsIgnorePattern": "_",
+        "ignoreRestSiblings": false,
+        "varsIgnorePattern": "_"
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never",
+        "astro": "never"
+      }
+    ],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".jsx", ".tsx", ".astro"]
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
+  }
 }
