@@ -24,7 +24,11 @@ const { blog } = Astro.props;
       {blog.title}
     </h1>
     <p class="mt-6 text-xl leading-8">
-      <img alt={blog.eyecatch.url} class="rounded-xl" src={blog.eyecatch.url} />
+      <img
+        alt={blog.eyecatch.url}
+        class="mx-auto max-h-80 rounded-xl"
+        src={blog.eyecatch.url}
+      />
     </p>
     <div class="mt-10 max-w-2xl">
       <div class="prose text-gray-500" set:html={blog.content} />
