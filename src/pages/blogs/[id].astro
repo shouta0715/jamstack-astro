@@ -1,0 +1,25 @@
+---
+import BlogDetail from "@/components/Detail/index.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getBlogDetail, getBlogs } from "@/libs/cms";
+
+export async function getStaticPaths() {
+  const response = await getBlogs({ fields: ["id"] });
+
+  return response.contents.map((content) => {
+    return {
+      params: {
+        id: content.id,
+      },
+    };
+  });
+}
+
+const { id } = Astro.params;
+
+const blog = await getBlogDetail(id as string);
+---
+
+<Layout>
+  <BlogDetail blog={blog} />
+</Layout>
